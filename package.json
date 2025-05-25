@@ -1,0 +1,49 @@
+{
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "prepare": "husky",
+    "lint": "eslint --ext .js,.ts src",
+    "lint:watch": "eslint --ext .js,.ts src --watch",
+    "lint:fix": "eslint --ext .js,.ts src --fix",
+    "format": "prettier --write ."
+  },
+  "type": "module",
+  "dependencies": {
+    "fabric": "^6.6.4",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "@eslint/js": "^9.26.0",
+    "babel-loader": "^10.0.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^7.1.2",
+    "eslint": "^9.26.0",
+    "eslint-webpack-plugin": "^5.0.1",
+    "file-loader": "^6.2.0",
+    "globals": "^16.1.0",
+    "html-webpack-plugin": "^5.6.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "mini-css-extract-plugin": "^2.9.2",
+    "prettier": "^3.5.3",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.99.8",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}

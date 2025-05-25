@@ -1,0 +1,225 @@
+{
+  "nodes": [
+    {
+      "id": "start",
+      "type": "🗄️",
+      "label": "Start",
+      "x": 100,
+      "y": 100,
+      "height": 80
+    },
+    {
+      "id": "orderReceived",
+      "type": "📦",
+      "label": "Order Received",
+      "x": 300,
+      "y": 100,
+      "height": 80
+    },
+    {
+      "id": "paymentVerification",
+      "type": "💰",
+      "label": "Payment Verified",
+      "x": 500,
+      "y": 100,
+      "height": 80
+    },
+    {
+      "id": "fraudCheck",
+      "type": "🔍",
+      "label": "Fraud Check",
+      "x": 500,
+      "y": 250,
+      "height": 80
+    },
+    {
+      "id": "fraudDetected",
+      "type": "🚨",
+      "label": "Fraud Detected",
+      "x": 500,
+      "y": 400,
+      "height": 80
+    },
+    {
+      "id": "notifySecurity",
+      "type": "🚔",
+      "label": "Notify Security",
+      "x": 700,
+      "y": 400,
+      "height": 80
+    },
+    {
+      "id": "stockCheck",
+      "type": "🏪",
+      "label": "Check Stock",
+      "x": 700,
+      "y": 100,
+      "height": 80
+    },
+    {
+      "id": "stockAvailable",
+      "type": "✅",
+      "label": "Stock Available",
+      "x": 900,
+      "y": 100,
+      "height": 80
+    },
+    {
+      "id": "stockUnavailable",
+      "type": "❌",
+      "label": "Stock Unavailable",
+      "x": 900,
+      "y": 250,
+      "height": 80
+    },
+    {
+      "id": "notifyCustomer",
+      "type": "✉️",
+      "label": "Notify Customer",
+      "x": 1100,
+      "y": 250,
+      "height": 80
+    },
+    {
+      "id": "processShipment",
+      "type": "🚚",
+      "label": "Process Shipment",
+      "x": 1100,
+      "y": 100,
+      "height": 80
+    },
+    {
+      "id": "shipmentSent",
+      "type": "📤",
+      "label": "Shipment Sent",
+      "x": 1300,
+      "y": 100,
+      "height": 80
+    },
+    {
+      "id": "orderComplete",
+      "type": "🏁",
+      "label": "Order Complete",
+      "x": 1500,
+      "y": 100,
+      "height": 80
+    },
+    {
+      "id": "refundProcess",
+      "type": "🔄",
+      "label": "Refund Process",
+      "x": 700,
+      "y": 550,
+      "height": 80
+    },
+    {
+      "id": "customerSupport",
+      "type": "📞",
+      "label": "Customer Support",
+      "x": 900,
+      "y": 550,
+      "height": 80
+    },
+    {
+      "id": "issueResolved",
+      "type": "✔️",
+      "label": "Issue Resolved",
+      "x": 1100,
+      "y": 550,
+      "height": 80
+    }
+  ],
+
+  "connections": [
+    {
+      "from": "start",
+      "to": "orderReceived",
+      "fromEdge": "right",
+      "toEdge": "left"
+    },
+    {
+      "from": "orderReceived",
+      "to": "paymentVerification",
+      "fromEdge": "right",
+      "toEdge": "left"
+    },
+    {
+      "from": "paymentVerification",
+      "to": "stockCheck",
+      "fromEdge": "right",
+      "toEdge": "left"
+    },
+    {
+      "from": "stockCheck",
+      "to": "stockAvailable",
+      "fromEdge": "right",
+      "toEdge": "left"
+    },
+    {
+      "from": "stockCheck",
+      "to": "stockUnavailable",
+      "fromEdge": "bottom",
+      "toEdge": "top"
+    },
+    {
+      "from": "stockUnavailable",
+      "to": "notifyCustomer",
+      "fromEdge": "right",
+      "toEdge": "left"
+    },
+    {
+      "from": "stockAvailable",
+      "to": "processShipment",
+      "fromEdge": "right",
+      "toEdge": "left"
+    },
+    {
+      "from": "processShipment",
+      "to": "shipmentSent",
+      "fromEdge": "right",
+      "toEdge": "left"
+    },
+    {
+      "from": "shipmentSent",
+      "to": "orderComplete",
+      "fromEdge": "right",
+      "toEdge": "left"
+    },
+    {
+      "from": "paymentVerification",
+      "to": "fraudCheck",
+      "fromEdge": "bottom",
+      "toEdge": "top"
+    },
+    {
+      "from": "fraudCheck",
+      "to": "fraudDetected",
+      "fromEdge": "bottom",
+      "toEdge": "top"
+    },
+    {
+      "from": "fraudDetected",
+      "to": "notifySecurity",
+      "fromEdge": "right",
+      "toEdge": "left"
+    },
+    {
+      "from": "notifySecurity",
+      "to": "refundProcess",
+      "fromEdge": "bottom",
+      "toEdge": "top"
+    },
+    {
+      "from": "refundProcess",
+      "to": "customerSupport",
+      "fromEdge": "right",
+      "toEdge": "left"
+    },
+    {
+      "from": "customerSupport",
+      "to": "issueResolved",
+      "fromEdge": "right",
+      "toEdge": "left"
+    }
+  ]
+}

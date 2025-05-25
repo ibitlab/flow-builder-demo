@@ -1,0 +1,8 @@
+:root {
+  --flowchart-canvas-focus: rgba(128, 188, 254, 0.6);
+}
+
+.styles-module__canvas-wrapper___FCci:focus {
+  outline: 1px solid var(--flowchart-canvas-focus);
+}
+
